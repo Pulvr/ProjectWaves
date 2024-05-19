@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjs3x8p3385u3"]
+
+[ext_resource type="Texture2D" uid="uid://c3m80mses7j52" path="res://assets/Background/Background.png" id="1_uhpr5"]
+[ext_resource type="PackedScene" uid="uid://bhjmsnytfgeys" path="res://draggable_Sprite.tscn" id="2_2ra3d"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(648, 355)
+scale = Vector2(1.05082, 1.05082)
+texture = ExtResource("1_uhpr5")
+
+[node name="DraggableSprite" parent="." instance=ExtResource("2_2ra3d")]
+position = Vector2(199, 161)
