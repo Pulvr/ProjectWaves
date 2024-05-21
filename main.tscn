@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjs3x8p3385u3"]
+[gd_scene load_steps=5 format=3 uid="uid://cjs3x8p3385u3"]
 
 [ext_resource type="Texture2D" uid="uid://c3m80mses7j52" path="res://assets/Background/Background.png" id="1_uhpr5"]
-[ext_resource type="PackedScene" uid="uid://bhjmsnytfgeys" path="res://draggable_Sprite.tscn" id="2_2ra3d"]
+[ext_resource type="PackedScene" uid="uid://dumiy2kp3f6wr" path="res://draggable_Sprite.tscn" id="2_2ra3d"]
+[ext_resource type="PackedScene" uid="uid://cnl0xsjg6usbp" path="res://Mob.tscn" id="3_ajw72"]
+
+[sub_resource type="Curve2D" id="Curve2D_vvj5n"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 96, 232, 0, 0, 0, 0, 578, 237, 0, 0, 0, 0, 581, 376, 0, 0, 0, 0, 439, 374, 0, 0, 0, 0, 442, 516, 0, 0, 0, 0, 715, 517, 0, 0, 0, 0, 714, 232, 0, 0, 0, 0, 1067, 232, 0, 0, 0, 0, 1071, 370, 0, 0, 0, 0, 855, 372, 0, 0, 0, 0, 862, 514, 0, 0, 0, 0, 1208, 520)
+}
+point_count = 12
 
 [node name="Main" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [5.0]
+metadata/_edit_vertical_guides_ = [4.0]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(648, 355)
@@ -12,3 +21,16 @@ texture = ExtResource("1_uhpr5")
 
 [node name="DraggableSprite" parent="." instance=ExtResource("2_2ra3d")]
 position = Vector2(199, 161)
+
+[node name="PathSpawner" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="PathSpawner"]
+curve = SubResource("Curve2D_vvj5n")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PathSpawner/Path2D"]
+position = Vector2(96, 232)
+rotates = false
+loop = false
+
+[node name="Mob" parent="PathSpawner/Path2D/PathFollow2D" instance=ExtResource("3_ajw72")]
+position = Vector2(-37, -1)
