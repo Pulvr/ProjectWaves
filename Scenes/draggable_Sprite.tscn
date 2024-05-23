@@ -1,11 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dumiy2kp3f6wr"]
 
-[ext_resource type="Script" path="res://dragndrop.gd" id="1_1rty4"]
+[ext_resource type="Script" path="res://Scripts/dragndrop.gd" id="1_1rty4"]
 [ext_resource type="Texture2D" uid="uid://by5hgxtu7f5pb" path="res://icon.svg" id="2_dbsd8"]
 
 [node name="DraggableSprite" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [-32.0, 32.0]
-metadata/_edit_vertical_guides_ = [-32.0, 32.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.498047, 0.498047)

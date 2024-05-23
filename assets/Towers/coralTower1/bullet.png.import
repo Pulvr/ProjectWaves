@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rfn5me1f0ugn"
-path="res://.godot/imported/EnemyTestSprite.png-5c3e54518167636ef6d8aaf1196499f3.ctex"
+uid="uid://5a0i0h2j81i3"
+path="res://.godot/imported/bullet.png-4889085ff9d2d9807dbd2c21aaed254e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/Enemy/EnemyTestSprite.png"
-dest_files=["res://.godot/imported/EnemyTestSprite.png-5c3e54518167636ef6d8aaf1196499f3.ctex"]
+source_file="res://assets/Towers/coralTower1/bullet.png"
+dest_files=["res://.godot/imported/bullet.png-4889085ff9d2d9807dbd2c21aaed254e.ctex"]
 
 [params]
 
