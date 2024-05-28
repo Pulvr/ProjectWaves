@@ -1,18 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjs3x8p3385u3"]
+[gd_scene load_steps=5 format=3 uid="uid://cjs3x8p3385u3"]
 
 [ext_resource type="Texture2D" uid="uid://c3m80mses7j52" path="res://assets/Background/Background.png" id="1_uv615"]
 [ext_resource type="Script" path="res://Scripts/PathSpawner.gd" id="3_5nqs7"]
 [ext_resource type="PackedScene" uid="uid://dog6lc16rmp4c" path="res://Scenes/coral_tower.tscn" id="3_7b1qv"]
+[ext_resource type="Texture2D" uid="uid://daxxuylrwypvx" path="res://assets/Background/ProjectWave Background 1.png" id="4_5t31w"]
 
 [node name="Main" type="Node2D"]
 
+[node name="ProjectWaveBackground1" type="Sprite2D" parent="."]
+position = Vector2(623, 377)
+scale = Vector2(0.372917, 0.396528)
+texture = ExtResource("4_5t31w")
+
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(648, 355)
-scale = Vector2(1.05082, 1.05082)
+modulate = Color(1, 1, 1, 0.25098)
+position = Vector2(635.5, 342)
+scale = Vector2(1.20016, 1.19739)
 texture = ExtResource("1_uv615")
 
 [node name="PathSpawner" type="Node2D" parent="."]
-position = Vector2(73, 229)
+position = Vector2(40, 204)
 script = ExtResource("3_5nqs7")
 
 [node name="Timer" type="Timer" parent="PathSpawner"]
