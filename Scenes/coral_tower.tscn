@@ -10,13 +10,14 @@ size = Vector2(59, 55)
 radius = 216.021
 
 [node name="CoralTower" type="StaticBody2D"]
+collision_layer = 2
 script = ExtResource("1_oea5t")
 
 [node name="TowerCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_0ltsu")
 
-[node name="Area" type="Marker2D" parent="."]
+[node name="Aim" type="Marker2D" parent="."]
 
 [node name="Koralle1_1" type="Sprite2D" parent="."]
 position = Vector2(1, -36)
@@ -28,7 +29,7 @@ texture = ExtResource("2_qtg6h")
 [node name="Range" type="CollisionShape2D" parent="Tower"]
 shape = SubResource("CircleShape2D_q1gtl")
 
-[node name="Node" type="Node" parent="."]
+[node name="BulletContainer" type="Node" parent="."]
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
