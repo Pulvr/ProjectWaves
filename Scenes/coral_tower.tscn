@@ -20,8 +20,8 @@ shape = SubResource("RectangleShape2D_0ltsu")
 [node name="Aim" type="Marker2D" parent="."]
 
 [node name="Koralle1_1" type="Sprite2D" parent="."]
-position = Vector2(1, -36)
-scale = Vector2(0.08, 0.08)
+position = Vector2(2, -25)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_qtg6h")
 
 [node name="Tower" type="Area2D" parent="."]

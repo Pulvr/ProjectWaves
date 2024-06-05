@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjs3x8p3385u3"]
 
-[ext_resource type="Texture2D" uid="uid://c3m80mses7j52" path="res://assets/Background/Background.png" id="1_uv615"]
+[ext_resource type="Texture2D" uid="uid://frqmnjsij7f" path="res://assets/Background/ProjectWave Background Lvl 1 v3.png" id="1_y0uwl"]
 [ext_resource type="Script" path="res://Scripts/PathSpawner.gd" id="3_5nqs7"]
 [ext_resource type="PackedScene" uid="uid://dog6lc16rmp4c" path="res://Scenes/coral_tower.tscn" id="3_7b1qv"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(648, 355)
-scale = Vector2(1.05082, 1.05082)
-texture = ExtResource("1_uv615")
+position = Vector2(639.5, 374)
+scale = Vector2(0.33151, 0.351852)
+texture = ExtResource("1_y0uwl")
 
 [node name="PathSpawner" type="Node2D" parent="."]
 position = Vector2(73, 229)
@@ -20,10 +20,10 @@ autostart = true
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="CoralTower" parent="Towers" instance=ExtResource("3_7b1qv")]
-position = Vector2(336, 305)
+[node name="CoralTower" parent="." instance=ExtResource("3_7b1qv")]
+position = Vector2(305, 299)
 
-[node name="CoralTower2" parent="Towers" instance=ExtResource("3_7b1qv")]
-position = Vector2(616, 301)
+[node name="CoralTower2" parent="." instance=ExtResource("3_7b1qv")]
+position = Vector2(606, 295)
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
