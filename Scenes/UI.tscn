@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b6gabb2wblfxi" path="res://Scenes/UI/Coral_Tower_Panel.tscn" id="1_fj45r"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+metadata/_edit_vertical_guides_ = [1302.0]
 
 [node name="Panel" type="Panel" parent="."]
 offset_top = 597.0
