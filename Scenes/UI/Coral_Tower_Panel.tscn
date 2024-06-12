@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6gabb2wblfxi"]
+
+[ext_resource type="Texture2D" uid="uid://cwnvgiun4t74a" path="res://assets/Towers/coralTower1/Koralle 1.1.png" id="1_2ykr0"]
+[ext_resource type="Script" path="res://Scenes/UI/Coral_Tower_Panel.gd" id="1_dtafx"]
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+script = ExtResource("1_dtafx")
+
+[node name="Koralle1_1" type="Sprite2D" parent="."]
+position = Vector2(51, 46)
+scale = Vector2(0.206992, 0.206992)
+texture = ExtResource("1_2ykr0")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

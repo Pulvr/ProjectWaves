@@ -12,8 +12,8 @@ speed = 150
 metadata/_edit_vertical_guides_ = [32.0, -32.0]
 metadata/_edit_horizontal_guides_ = [-32.0, 32.0]
 
-[node name="EnemyTestSprite" type="Sprite2D" parent="."]
-position = Vector2(6, 0)
+[node name="EnemySprite" type="Sprite2D" parent="."]
+position = Vector2(6, 2)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_6hjdd")
 

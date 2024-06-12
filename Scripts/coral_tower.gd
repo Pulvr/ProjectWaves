@@ -43,3 +43,7 @@ func _on_tower_body_entered(body):
 func _on_tower_body_exited(body):
 	currTargets = get_node("Tower").get_overlapping_bodies()
 	pass
+
+
+func _on_cooldown_timer_timeout():
+	pass # Replace with function body.

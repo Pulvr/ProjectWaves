@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://croipvk7fxaxp" path="res://assets/Background/ProjectWave_Background_Lvl_1_v5.png" id="1_rkcys"]
 [ext_resource type="Script" path="res://Scripts/PathSpawner.gd" id="3_5nqs7"]
-[ext_resource type="PackedScene" uid="uid://dog6lc16rmp4c" path="res://Scenes/coral_tower.tscn" id="3_7b1qv"]
+[ext_resource type="PackedScene" uid="uid://dc887fuuny1l2" path="res://Scenes/UI.tscn" id="3_kobho"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(639.5, 354)
-scale = Vector2(0.33151, 0.333333)
+position = Vector2(641, 360)
+scale = Vector2(0.336458, 0.338889)
 texture = ExtResource("1_rkcys")
 
 [node name="PathSpawner" type="Node2D" parent="."]
@@ -20,10 +20,6 @@ autostart = true
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="CoralTower" parent="Towers" instance=ExtResource("3_7b1qv")]
-position = Vector2(589, 114)
-
-[node name="CoralTower2" parent="Towers" instance=ExtResource("3_7b1qv")]
-position = Vector2(312, 258)
+[node name="Bottom UI" parent="." instance=ExtResource("3_kobho")]
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dog6lc16rmp4c"]
+[gd_scene load_steps=6 format=3 uid="uid://dog6lc16rmp4c"]
 
 [ext_resource type="Script" path="res://Scripts/coral_tower.gd" id="1_oea5t"]
 [ext_resource type="Texture2D" uid="uid://cwnvgiun4t74a" path="res://assets/Towers/coralTower1/Koralle 1.1.png" id="2_qtg6h"]
@@ -7,7 +7,14 @@
 size = Vector2(59, 55)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q1gtl"]
-radius = 216.021
+radius = 216.002
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfufo"]
+bg_color = Color(0.262745, 0.262745, 0.262745, 0.392157)
+corner_radius_top_left = 215
+corner_radius_top_right = 215
+corner_radius_bottom_right = 215
+corner_radius_bottom_left = 215
 
 [node name="CoralTower" type="StaticBody2D"]
 collision_layer = 2
@@ -31,5 +38,16 @@ shape = SubResource("CircleShape2D_q1gtl")
 
 [node name="BulletContainer" type="Node" parent="."]
 
+[node name="Area" type="Panel" parent="."]
+offset_left = -216.0
+offset_top = -216.0
+offset_right = 216.0
+offset_bottom = 216.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mfufo")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

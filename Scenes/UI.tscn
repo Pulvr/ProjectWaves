@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc887fuuny1l2"]
+
+[ext_resource type="PackedScene" uid="uid://b6gabb2wblfxi" path="res://Scenes/UI/Coral_Tower_Panel.tscn" id="1_fj45r"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 597.0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 12.0
+offset_right = 1271.0
+offset_bottom = 106.0
+theme_override_constants/h_separation = 10
+
+[node name="Panel" parent="Panel/FlowContainer" instance=ExtResource("1_fj45r")]
+layout_mode = 2
+
+[node name="Panel2" parent="Panel/FlowContainer" instance=ExtResource("1_fj45r")]
+layout_mode = 2
