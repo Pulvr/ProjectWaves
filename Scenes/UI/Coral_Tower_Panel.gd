@@ -1,23 +1,40 @@
 extends Panel
 
-
 @onready var tower = preload("res://Scenes/coral_tower.tscn")
 var currTile
-
+var label 
 
 func _on_gui_input(event):
 	var tempTower = tower.instantiate()
 	if event is InputEventMouseButton and event.button_mask == 1:
 		#Left Click Down
 		add_child(tempTower)
-		
 		tempTower.process_mode = Node.PROCESS_MODE_DISABLED
+		get_child(1).global_position = event.global_position
+		
 	elif event is InputEventMouseMotion and event.button_mask == 1:
 		#Left Click Drag
 		#nachdem tempTower als child gaddet wurde, ist es nicht mehr direkt 
 		#addressierbar, also get the first child of array
 		if get_child_count() > 1:
+			#Fehler Text resetten
+			label = get_tree().get_root().get_node("Main/Label")
+			label.set_text("")
+
 			get_child(1).global_position = event.global_position
+
+			#lots of stupid code to the the tilemap and current tile
+			var mapPath = get_tree().get_root().get_node("Main/TileMap")
+			var tile = mapPath.local_to_map(get_global_mouse_position())
+			currTile = mapPath.get_cell_atlas_coords(0,tile,false)
+			#Check if current tile is 3,3 which is the path. If so set the color to RED
+			#Else turn it gray
+			#KOORDINATE 3,3 ist der Weg
+			if(currTile == Vector2i(3,3)):
+				get_child(1).get_node("Area").modulate = Color.RED
+			else:
+				get_child(1).get_node("Area").modulate = Color.GRAY
+
 	elif event is InputEventMouseButton and event.button_mask == 0:
 		#dieses child aus der "drag" queue dann löschen
 		# nur ausführen wenn man auch wirklich ein child hat
@@ -27,16 +44,22 @@ func _on_gui_input(event):
 		else:
 			if get_child_count() > 1:
 				get_child(1).queue_free()
-		#den aktuellen Pfad aus der main scene mit dem Node "Towers" holen
-			var path = get_tree().get_root().get_node("Main/Towers")
-			
-			#den temptower dann als "child" vom Node Towers in der main adden
-			path.add_child(tempTower)
-			
-			#die position ist da, wo die maus gerade ist und die Tower Range wird ausgeblendet
-			tempTower.global_position = event.global_position
-			tempTower.get_node("Area").hide()
+			#den aktuellen Pfad aus der main scene mit dem Node "Towers" holen
+			if currTile != Vector2i(3,3):
+				var path = get_tree().get_root().get_node("Main/Towers")
+				
+				#den temptower dann als "child" vom Node Towers in der main adden
+				path.add_child(tempTower)
+				
+				#die position ist da, wo die maus gerade ist und die Tower Range wird ausgeblendet
+				tempTower.global_position = event.global_position
+				tempTower.get_node("Area").hide()
+			else:
+				#Fehler Text setzen
+				label.set_text("Turm darf nicht auf dem Weg platziert werden")
+				
 	#falls irgend ein anderer Button Input dazwischen kommt, aktuelle Queue löschen
 	else:
 		if get_child_count() > 1:
 			get_child(1).queue_free()
+

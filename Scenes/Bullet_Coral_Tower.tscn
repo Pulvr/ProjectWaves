@@ -8,6 +8,8 @@ radius = 13.0384
 
 [node name="Bullet_coral_tower" type="CharacterBody2D"]
 script = ExtResource("1_3m4ht")
+metadata/_edit_vertical_guides_ = [-13.0, 13.0]
+metadata/_edit_horizontal_guides_ = [-13.0, 13.0]
 
 [node name="Bullet" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
