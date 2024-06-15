@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjs3x8p3385u3"]
+[gd_scene load_steps=5 format=3 uid="uid://cjs3x8p3385u3"]
 
 [ext_resource type="Texture2D" uid="uid://croipvk7fxaxp" path="res://assets/Background/ProjectWave_Background_Lvl_1_v5.png" id="1_rkcys"]
 [ext_resource type="Script" path="res://Scripts/PathSpawner.gd" id="3_5nqs7"]
 [ext_resource type="PackedScene" uid="uid://dc887fuuny1l2" path="res://Scenes/UI.tscn" id="3_kobho"]
+[ext_resource type="Texture2D" uid="uid://by5hgxtu7f5pb" path="res://icon.svg" id="4_qsf0k"]
 
 [node name="Main" type="Node2D"]
 
@@ -21,5 +22,31 @@ autostart = true
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Bottom UI" parent="." instance=ExtResource("3_kobho")]
+
+[node name="HP" type="Panel" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 110.0
+offset_bottom = 70.0
+
+[node name="Sprite2D" type="Sprite2D" parent="HP"]
+position = Vector2(74, 29)
+scale = Vector2(0.241, 0.25)
+texture = ExtResource("4_qsf0k")
+
+[node name="HpBar" type="ProgressBar" parent="HP"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06
+anchor_top = 0.508333
+anchor_right = 0.06
+anchor_bottom = 0.508333
+offset_top = -13.5
+offset_right = 43.0
+offset_bottom = 13.5
+grow_vertical = 2
+value = 100.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
