@@ -5,7 +5,7 @@ extends Node
 var max_hp = 100
 var current_hp = 100
 
-onready var hp_bar = $Control/ProgressBar
+@onready var hp_bar = $HP/HpBar
 
 func _ready():
 	update_hp_bar()
@@ -30,4 +30,3 @@ func _input(event):
 		take_damage(10)
 	elif event.is_action_pressed("ui_cancel"):
 			heal(10)
-

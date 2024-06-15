@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjs3x8p3385u3"]
+[gd_scene load_steps=7 format=3 uid="uid://cjs3x8p3385u3"]
 
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_h0s2x"]
 [ext_resource type="Texture2D" uid="uid://croipvk7fxaxp" path="res://assets/Background/ProjectWave_Background_Lvl_1_v5.png" id="1_rkcys"]
 [ext_resource type="Script" path="res://Scripts/PathSpawner.gd" id="3_5nqs7"]
 [ext_resource type="PackedScene" uid="uid://dc887fuuny1l2" path="res://Scenes/UI.tscn" id="3_kobho"]
-[ext_resource type="Texture2D" uid="uid://by5hgxtu7f5pb" path="res://icon.svg" id="4_qsf0k"]
 [ext_resource type="PackedScene" uid="uid://dtsyp63k4h5pt" path="res://assets/tile_map.tscn" id="4_cqrjg"]
-
+[ext_resource type="Texture2D" uid="uid://by5hgxtu7f5pb" path="res://icon.svg" id="4_qsf0k"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_h0s2x")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(641, 360)
@@ -24,7 +25,6 @@ autostart = true
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Bottom UI" parent="." instance=ExtResource("3_kobho")]
-
 
 [node name="HP" type="Panel" parent="."]
 offset_left = 10.0
@@ -60,6 +60,5 @@ offset_left = 8.0
 offset_top = 555.0
 offset_right = 214.0
 offset_bottom = 588.0
-
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
