@@ -19,6 +19,7 @@ corner_radius_bottom_left = 215
 [node name="CoralTower" type="StaticBody2D"]
 collision_layer = 2
 script = ExtResource("1_oea5t")
+metadata/_edit_vertical_guides_ = [-48.0, 45.0]
 
 [node name="TowerCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)
