@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjs3x8p3385u3"]
+[gd_scene load_steps=8 format=3 uid="uid://cjs3x8p3385u3"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_h0s2x"]
 [ext_resource type="Texture2D" uid="uid://croipvk7fxaxp" path="res://assets/Background/ProjectWave_Background_Lvl_1_v5.png" id="1_rkcys"]
@@ -6,13 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://dc887fuuny1l2" path="res://Scenes/UI.tscn" id="3_kobho"]
 [ext_resource type="PackedScene" uid="uid://dtsyp63k4h5pt" path="res://assets/tile_map.tscn" id="4_cqrjg"]
 [ext_resource type="Texture2D" uid="uid://by5hgxtu7f5pb" path="res://icon.svg" id="4_qsf0k"]
+[ext_resource type="Script" path="res://Scenes/money.gd" id="6_yt2wt"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h0s2x")
+metadata/_edit_vertical_guides_ = [-152.0]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(641, 360)
-scale = Vector2(0.336458, 0.338889)
+position = Vector2(647, 365.5)
+scale = Vector2(0.336979, 0.338426)
 texture = ExtResource("1_rkcys")
 
 [node name="PathSpawner" type="Node2D" parent="."]
@@ -26,31 +28,40 @@ autostart = true
 
 [node name="Bottom UI" parent="." instance=ExtResource("3_kobho")]
 
-[node name="HP" type="Panel" parent="."]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 110.0
-offset_bottom = 70.0
+[node name="UI" type="Panel" parent="."]
+offset_left = 13.0
+offset_top = 12.0
+offset_right = 119.0
+offset_bottom = 110.0
 
-[node name="Sprite2D" type="Sprite2D" parent="HP"]
-position = Vector2(74, 29)
+[node name="Sprite2D" type="Sprite2D" parent="UI"]
+position = Vector2(83, 29)
 scale = Vector2(0.241, 0.25)
 texture = ExtResource("4_qsf0k")
 
-[node name="HpBar" type="ProgressBar" parent="HP"]
+[node name="HpBar" type="ProgressBar" parent="UI"]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.06
-anchor_top = 0.508333
-anchor_right = 0.06
-anchor_bottom = 0.508333
-offset_top = -13.5
+anchor_left = 0.141509
+anchor_top = 0.142857
+anchor_right = 0.141509
+anchor_bottom = 0.142857
 offset_right = 43.0
-offset_bottom = 13.5
-grow_vertical = 2
+offset_bottom = 27.0
 value = 100.0
 metadata/_edit_use_anchors_ = true
+
+[node name="money" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 55.0
+offset_right = 58.0
+offset_bottom = 81.0
+text = "100"
+script = ExtResource("6_yt2wt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="UI"]
 
 [node name="TileMap" parent="." instance=ExtResource("4_cqrjg")]
 layer_0/tile_data = PackedInt32Array(0, 196608, 3, 1, 196608, 3, 2, 196608, 3, 3, 196608, 3, 4, 196608, 3, 65536, 196608, 3, 131072, 196608, 3, 131073, 196608, 3, 196609, 196608, 3, 196610, 196608, 3, 196611, 196608, 3, 196612, 196608, 3, 196613, 196608, 3, 196614, 196608, 3, 196615, 196608, 3, 196616, 196608, 3, 262152, 196608, 3, 327688, 196608, 3, 393224, 196608, 3, 458758, 196608, 3, 524294, 196608, 3, 524299, 196608, 3, 458763, 196608, 3, 393227, 196608, 3, 327691, 196608, 3, 262155, 196608, 3, 196619, 196608, 3, 196620, 196608, 3, 196621, 196608, 3, 196622, 196608, 3, 196623, 196608, 3, 196624, 196608, 3, 196625, 196608, 3, 262161, 196608, 3, 327697, 196608, 3, 393233, 196608, 3, 393232, 196608, 3, 393231, 196608, 3, 393230, 196608, 3, 393229, 196608, 3, 458765, 196608, 3, 524301, 196608, 3, 196608, 196608, 3, 589830, 196608, 3, 589835, 196608, 3, 589837, 196608, 3, 589838, 196608, 3, 589839, 196608, 3, 589840, 196608, 3, 589841, 196608, 3, 589842, 196608, 3, 589843, 196608, 3, 655373, 196608, 3, 655374, 196608, 3, 655375, 196608, 3, 655376, 196608, 3, 655377, 196608, 3, 655378, 196608, 3, 655379, 196608, 3, 655366, 196608, 3, 655367, 196608, 3, 655368, 196608, 3, 655369, 196608, 3, 655370, 196608, 3, 655371, 196608, 3, 262156, 196608, 3, 262157, 196608, 3, 262158, 196608, 3, 262159, 196608, 3, 262160, 196608, 3, 458759, 196608, 3, 458760, 196608, 3, 262144, 196608, 3, 262145, 196608, 3, 262146, 196608, 3, 262147, 196608, 3, 262148, 196608, 3, 262149, 196608, 3, 262150, 196608, 3, 262151, 196608, 3, 458766, 196608, 3, 458767, 196608, 3, 458768, 196608, 3, 458769, 196608, 3, 655380, 196608, 3, 589844, 196608, 3, 393221, 196608, 3, 458757, 196608, 3, 524293, 196608, 3, 589829, 196608, 3, 655365, 196608, 3, 589831, 196608, 3, 589832, 196608, 3, 589833, 196608, 3, 589834, 196608, 3)

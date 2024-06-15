@@ -4,6 +4,7 @@ extends Node
 # Spieler Skript
 var max_hp = 100
 var current_hp = 100
+var money = 100
 
 @onready var hp_bar = $HP/HpBar
 
