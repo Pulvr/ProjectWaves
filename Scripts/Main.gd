@@ -6,7 +6,7 @@ signal gameOver
 var max_hp = 100
 var current_hp = 100
 
-@onready var hp_bar = $HP/HpBar
+@onready var hp_bar = $UI/HpBar
 
 func _ready():
 	update_hp_bar()

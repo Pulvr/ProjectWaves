@@ -6,16 +6,25 @@ var Bullet = preload("res://Scenes/Bullet_Coral_Tower.tscn")
 var pathName
 var currTargets = [] 	# array mit allen currentTargets
 var curr 				# aktuelles Ziel
-var justShot = false
+var justShot = true
 
 func _process(delta):
 	#Kugeln die nicht mehr gebraucht werden löschen
 	if !is_instance_valid(curr):
 		for i in get_node("BulletContainer").get_child_count():
 			get_node("BulletContainer").get_child(i).queue_free()
-
+	#Logic for shooting
+	if justShot == false and !currTargets.is_empty():
+		var tempBullet  = Bullet.instantiate()
+		tempBullet.pathName = pathName
+		tempBullet.bulletDamage = bulletDamage
+		get_node("BulletContainer").call_deferred("add_child", tempBullet)
+		tempBullet.set_deferred("global_position", $Aim.global_position)
+		justShot=true
+		
+# Logik zum füllen des Ziel-Arrays
 func _on_tower_body_entered(body):
-	if "Mob" in body.name and justShot == false:
+	if "Mob" in body.name:
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
 		
@@ -34,12 +43,6 @@ func _on_tower_body_entered(body):
 		curr = currTarget
 		pathName = currTarget.get_parent().name
 		
-		var tempBullet  = Bullet.instantiate()
-		tempBullet.pathName = pathName
-		tempBullet.bulletDamage = bulletDamage
-		get_node("BulletContainer").call_deferred("add_child", tempBullet)
-		tempBullet.set_deferred("global_position", $Aim.global_position)
-		justShot = true
 
 func _on_tower_body_exited(body):
 	currTargets = get_node("Tower").get_overlapping_bodies()

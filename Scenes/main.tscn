@@ -22,24 +22,31 @@ texture = ExtResource("1_rkcys")
 position = Vector2(75, 206)
 script = ExtResource("3_5nqs7")
 
-[node name="Timer" type="Timer" parent="PathSpawner"]
+[node name="SpawnTimer" type="Timer" parent="PathSpawner"]
+
+[node name="StartWaveButton" type="Button" parent="PathSpawner"]
+offset_left = -11.0
+offset_top = 189.0
+offset_right = 89.0
+offset_bottom = 289.0
+text = "Start Wave"
 
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Bottom UI" parent="." instance=ExtResource("3_kobho")]
 
-[node name="HP" type="Panel" parent="."]
+[node name="UI" type="Panel" parent="."]
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 110.0
 offset_bottom = 70.0
 
-[node name="Sprite2D" type="Sprite2D" parent="HP"]
+[node name="Sprite2D" type="Sprite2D" parent="UI"]
 position = Vector2(74, 29)
 scale = Vector2(0.241, 0.25)
 texture = ExtResource("4_qsf0k")
 
-[node name="HpBar" type="ProgressBar" parent="HP"]
+[node name="HpBar" type="ProgressBar" parent="UI"]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -66,13 +73,6 @@ theme_override_colors/font_color = Color(0.691784, 0.296149, 0.690263, 1)
 theme_override_fonts/font = SubResource("SystemFont_s8ahx")
 theme_override_font_sizes/font_size = 30
 
-[node name="StartWaveButton" type="Button" parent="."]
-offset_left = 64.0
-offset_top = 395.0
-offset_right = 164.0
-offset_bottom = 495.0
-text = "Start Wave"
-
 [connection signal="gameOver" from="." to="." method="_on_game_over"]
-[connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
-[connection signal="pressed" from="StartWaveButton" to="PathSpawner" method="_on_start_wave_button_pressed"]
+[connection signal="timeout" from="PathSpawner/SpawnTimer" to="PathSpawner" method="_on_timer_timeout"]
+[connection signal="pressed" from="PathSpawner/StartWaveButton" to="PathSpawner" method="_on_start_wave_button_pressed"]

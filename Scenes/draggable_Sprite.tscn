@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dumiy2kp3f6wr"]
+[gd_scene load_steps=3 format=3 uid="uid://g6fknyo2fq81"]
 
 [ext_resource type="Script" path="res://Scripts/dragndrop.gd" id="1_1rty4"]
 [ext_resource type="Texture2D" uid="uid://by5hgxtu7f5pb" path="res://icon.svg" id="2_dbsd8"]

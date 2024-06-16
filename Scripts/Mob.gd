@@ -15,7 +15,6 @@ func _process(delta):
 	get_parent().set_progress(get_parent().get_progress() + speed*delta)
 	if get_parent().get_progress_ratio() == 1:
 		playerHp.take_damage(5)
-		#reachedGoal.emit()
-		queue_free()
+		get_parent().get_parent().queue_free() #delete entire node
 	if health <= 0:
 		get_parent().get_parent().queue_free()
