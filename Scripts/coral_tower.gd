@@ -7,6 +7,7 @@ var pathName
 var currTargets = [] 	# array mit allen currentTargets
 var curr 				# aktuelles Ziel
 var justShot = false
+@export var cost = 100
 
 func _process(delta):
 	#Kugeln die nicht mehr gebraucht werden löschen

@@ -5,7 +5,7 @@ signal gameOver
 # Spieler Skript
 var max_hp = 100
 var current_hp = 100
-var current_money = 1000
+@export var current_money = 1000
 
 @onready var hp_bar = $UI/HpBar
 @onready var money = $UI/money
