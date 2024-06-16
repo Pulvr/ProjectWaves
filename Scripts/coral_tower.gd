@@ -7,7 +7,6 @@ var pathName
 var currTargets = [] 	# array mit allen currentTargets
 var curr 				# aktuelles Ziel
 var justShot = false
-@export var cost = 100
 
 func _process(delta):
 	#Kugeln die nicht mehr gebraucht werden löschen
@@ -49,3 +48,4 @@ func _on_tower_body_exited(body):
 func _on_cooldown_timer_timeout():
 	#timer von 1 sekunde im tower, damit der tower nicht auf alle mobs gleichzeitig schießt beim platzieren
 	justShot = false
+	

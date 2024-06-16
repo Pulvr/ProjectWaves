@@ -5,7 +5,8 @@ signal gameOver
 # Spieler Skript
 var max_hp = 100
 var current_hp = 100
-@export var current_money = 1000
+var current_money = 100
+	
 
 @onready var hp_bar = $UI/HpBar
 @onready var money = $UI/money
@@ -31,6 +32,12 @@ func spend_money(amount):
 	if current_money < 0:
 		current_money = 0
 	update_money()
+	
+func check_money(amount):
+	current_money > amount
+	
+func get_money():
+	return current_money
 
 func heal(amount):
 	current_hp += amount
