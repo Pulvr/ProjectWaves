@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjs3x8p3385u3"]
+[gd_scene load_steps=9 format=3 uid="uid://cjs3x8p3385u3"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_h0s2x"]
 [ext_resource type="Texture2D" uid="uid://croipvk7fxaxp" path="res://assets/Background/ProjectWave_Background_Lvl_1_v5.png" id="1_rkcys"]
