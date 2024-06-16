@@ -2,11 +2,11 @@ extends StaticBody2D
 
 # lade bullet scene
 var Bullet = preload("res://Scenes/Bullet_Coral_Tower.tscn")
-var bulletDamage = 5
+@export var bulletDamage = 5
 var pathName
 var currTargets = [] 	# array mit allen currentTargets
 var curr 				# aktuelles Ziel
-
+var justShot = false
 
 func _process(delta):
 	#Kugeln die nicht mehr gebraucht werden löschen
@@ -15,7 +15,7 @@ func _process(delta):
 			get_node("BulletContainer").get_child(i).queue_free()
 
 func _on_tower_body_entered(body):
-	if "Mob" in body.name:
+	if "Mob" in body.name and justShot == false:
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
 		
@@ -39,10 +39,12 @@ func _on_tower_body_entered(body):
 		tempBullet.bulletDamage = bulletDamage
 		get_node("BulletContainer").call_deferred("add_child", tempBullet)
 		tempBullet.set_deferred("global_position", $Aim.global_position)
+		justShot = true
 
 func _on_tower_body_exited(body):
 	currTargets = get_node("Tower").get_overlapping_bodies()
 
 
 func _on_cooldown_timer_timeout():
-	pass # Replace with function body.
+	#timer von 1 sekunde im tower, damit der tower nicht auf alle mobs gleichzeitig schießt beim platzieren
+	justShot = false

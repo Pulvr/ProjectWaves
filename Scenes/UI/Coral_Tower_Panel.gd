@@ -18,7 +18,7 @@ func _on_gui_input(event):
 		#addressierbar, also get the first child of array
 		if get_child_count() > 1:
 			#Fehler Text resetten
-			label = get_tree().get_root().get_node("Main/Label")
+			label = get_tree().get_root().get_node("Main/ErrorLabel")
 			label.set_text("")
 
 			get_child(1).global_position = event.global_position
@@ -57,6 +57,7 @@ func _on_gui_input(event):
 			else:
 				#Fehler Text setzen
 				label.set_text("Turm darf nicht auf dem Weg platziert werden")
+				#label["theme_override_colors/font_color"] = Color.RED
 				
 	#falls irgend ein anderer Button Input dazwischen kommt, aktuelle Queue löschen
 	else:
