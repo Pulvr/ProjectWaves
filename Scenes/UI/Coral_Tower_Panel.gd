@@ -60,7 +60,7 @@ func _on_gui_input(event):
 				
 				#die position ist da, wo die maus gerade ist und die Tower Range wird ausgeblendet
 				tempTower.global_position = event.global_position
-				tempTower.get_node("Area").hide()
+				#tempTower.get_node("Area").hide()
 				mainScene.spend_money(tower_cost)
 			elif currTile == Vector2i(3,3):
 				#Fehler Text setzen
