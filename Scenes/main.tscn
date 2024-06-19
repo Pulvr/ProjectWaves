@@ -26,10 +26,10 @@ script = ExtResource("3_5nqs7")
 [node name="SpawnTimer" type="Timer" parent="PathSpawner"]
 
 [node name="StartWaveButton" type="Button" parent="PathSpawner"]
-offset_left = -11.0
-offset_top = 189.0
-offset_right = 89.0
-offset_bottom = 289.0
+offset_left = 1064.0
+offset_top = -182.0
+offset_right = 1164.0
+offset_bottom = -82.0
 text = "Start Wave"
 
 [node name="Towers" type="Node2D" parent="."]
