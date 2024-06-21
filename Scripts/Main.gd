@@ -60,3 +60,6 @@ func _process(delta):
 
 func _on_game_over():
 	get_tree().change_scene_to_file("res://Scenes/gameover_screen.tscn")
+
+func _on_path_spawner_game_won():
+	get_tree().change_scene_to_file("res://Scenes/gameWon_screen.tscn")

@@ -5,7 +5,6 @@ var currTile
 @onready var errorLabel = get_tree().get_root().get_node("Main/ErrorLabel")
 @onready var mainScene = get_tree().get_root().get_node("Main")
 
-
 var tower_cost = 100
 
 func _on_gui_input(event):
@@ -36,8 +35,7 @@ func _on_gui_input(event):
 			currTile = mapPath.get_cell_atlas_coords(0,tile,false)
 			#Check if current tile is 3,3 which is the path. If so set the color to RED
 			#Else turn it gray
-			#KOORDINATE 3,3 ist der Weg
-			if(currTile == Vector2i(3,3)):
+			if(currTile == Vector2i(3,3)): #KOORDINATE 3,3 ist der Weg
 				get_child(1).get_node("Area").modulate = Color.RED
 			else:
 				get_child(1).get_node("Area").modulate = Color.GRAY

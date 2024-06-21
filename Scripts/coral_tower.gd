@@ -33,7 +33,7 @@ func _on_tower_body_entered(body):
 	update_targets_array(body)
 
 func _on_tower_body_exited(body):
-	update_targets_array(body)
+	currTargets = get_node("Tower").get_overlapping_bodies()
 
 #wird ausgeführt wenn ein body die area entered und exited
 func update_targets_array(body):

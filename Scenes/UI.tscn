@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc887fuuny1l2"]
+[gd_scene load_steps=3 format=3 uid="uid://dc887fuuny1l2"]
 
 [ext_resource type="PackedScene" uid="uid://b6gabb2wblfxi" path="res://Scenes/UI/Coral_Tower_Panel.tscn" id="1_fj45r"]
+[ext_resource type="Texture2D" uid="uid://dn1oxkvidgfr7" path="res://assets/UIAssets/coin.png" id="2_px5wf"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 metadata/_edit_vertical_guides_ = [1302.0]
@@ -15,7 +16,7 @@ layout_mode = 0
 offset_left = 9.0
 offset_top = 12.0
 offset_right = 1271.0
-offset_bottom = 106.0
+offset_bottom = 112.0
 theme_override_constants/h_separation = 10
 
 [node name="Panel" parent="Panel/FlowContainer" instance=ExtResource("1_fj45r")]
@@ -23,3 +24,29 @@ layout_mode = 2
 
 [node name="Panel2" parent="Panel/FlowContainer" instance=ExtResource("1_fj45r")]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 89.0
+offset_right = 81.0
+offset_bottom = 112.0
+text = "100"
+
+[node name="Coin" type="Sprite2D" parent="Panel/Label"]
+position = Vector2(34, 13)
+scale = Vector2(0.226562, 0.226562)
+texture = ExtResource("2_px5wf")
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 89.0
+offset_right = 190.0
+offset_bottom = 112.0
+text = "100"
+
+[node name="Coin2" type="Sprite2D" parent="Panel/Label2"]
+position = Vector2(34, 13)
+scale = Vector2(0.226562, 0.226562)
+texture = ExtResource("2_px5wf")

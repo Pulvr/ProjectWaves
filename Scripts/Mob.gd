@@ -18,3 +18,9 @@ func _process(delta):
 	if health <= 0:
 		mainScene.earn_money(10)				#add 10 money
 		get_parent().get_parent().queue_free()	#delete entire node
+
+func set_speed(value):
+	speed = value
+
+func set_health(value):
+	health = value

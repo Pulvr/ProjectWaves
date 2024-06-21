@@ -10,8 +10,8 @@ offset_bottom = 100.0
 script = ExtResource("1_dtafx")
 
 [node name="Koralle1_1" type="Sprite2D" parent="."]
-position = Vector2(51, 46)
-scale = Vector2(0.206992, 0.206992)
+position = Vector2(53, 39)
+scale = Vector2(0.180654, 0.180654)
 texture = ExtResource("1_2ykr0")
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
