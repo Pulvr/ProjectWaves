@@ -1,12 +1,44 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjs3x8p3385u3"]
+[gd_scene load_steps=14 format=3 uid="uid://cjs3x8p3385u3"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_h0s2x"]
 [ext_resource type="Texture2D" uid="uid://croipvk7fxaxp" path="res://assets/Background/ProjectWave_Background_Lvl_1_v5.png" id="1_rkcys"]
 [ext_resource type="Script" path="res://Scripts/PathSpawner.gd" id="3_5nqs7"]
+[ext_resource type="Texture2D" uid="uid://c0f2hrpi3b6rj" path="res://assets/Background/UI-Frame.png" id="3_ik2kt"]
 [ext_resource type="PackedScene" uid="uid://dc887fuuny1l2" path="res://Scenes/UI.tscn" id="3_kobho"]
 [ext_resource type="PackedScene" uid="uid://dtsyp63k4h5pt" path="res://assets/tile_map.tscn" id="4_cqrjg"]
 [ext_resource type="Texture2D" uid="uid://cal0xeqintc30" path="res://assets/UIAssets/Heart.png" id="5_ome6y"]
 [ext_resource type="Texture2D" uid="uid://dn1oxkvidgfr7" path="res://assets/UIAssets/coin.png" id="6_k7mn1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dee8"]
+bg_color = Color(0.270588, 0.611765, 0.27451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugmms"]
+bg_color = Color(0.270588, 0.611765, 0.27451, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.690196, 0.690196, 0.690196, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsh26"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxkam"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="SystemFont" id="SystemFont_s8ahx"]
 font_names = PackedStringArray("Britannic")
@@ -19,6 +51,11 @@ position = Vector2(641, 360)
 scale = Vector2(0.336458, 0.338889)
 texture = ExtResource("1_rkcys")
 
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(-1.48598, -2.95095)
+scale = Vector2(3.96183, 3.95592)
+texture = ExtResource("3_ik2kt")
+
 [node name="PathSpawner" type="Node2D" parent="."]
 position = Vector2(75, 206)
 script = ExtResource("3_5nqs7")
@@ -26,10 +63,12 @@ script = ExtResource("3_5nqs7")
 [node name="SpawnTimer" type="Timer" parent="PathSpawner"]
 
 [node name="StartWaveButton" type="Button" parent="PathSpawner"]
-offset_left = 1077.0
-offset_top = -42.0
-offset_right = 1177.0
-offset_bottom = 58.0
+offset_left = 1088.0
+offset_top = -55.0
+offset_right = 1188.0
+offset_bottom = 45.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dee8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ugmms")
 text = "Start Wave"
 
 [node name="Towers" type="Node2D" parent="."]
@@ -37,10 +76,11 @@ text = "Start Wave"
 [node name="Bottom UI" parent="." instance=ExtResource("3_kobho")]
 
 [node name="UI" type="Panel" parent="."]
-offset_left = 30.0
-offset_top = 23.0
-offset_right = 150.0
-offset_bottom = 138.0
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 133.0
+offset_bottom = 122.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wsh26")
 
 [node name="HpBar" type="ProgressBar" parent="UI"]
 modulate = Color(1, 0, 0, 1)
@@ -63,11 +103,18 @@ scale = Vector2(0.671875, 0.696966)
 texture = ExtResource("5_ome6y")
 
 [node name="Panel" type="Panel" parent="UI"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.225
+anchor_top = -0.0347826
+anchor_right = 0.233333
+anchor_bottom = -0.0347826
 offset_left = 1122.0
 offset_top = 5.0
-offset_right = 1222.0
+offset_right = 1221.0
 offset_bottom = 45.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rxkam")
+metadata/_edit_use_anchors_ = true
 
 [node name="Wave" type="Label" parent="UI/Panel"]
 layout_mode = 0

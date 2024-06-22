@@ -1,7 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc887fuuny1l2"]
+[gd_scene load_steps=6 format=3 uid="uid://dc887fuuny1l2"]
 
 [ext_resource type="PackedScene" uid="uid://b6gabb2wblfxi" path="res://Scenes/UI/Coral_Tower_Panel.tscn" id="1_fj45r"]
 [ext_resource type="Texture2D" uid="uid://dn1oxkvidgfr7" path="res://assets/UIAssets/coin.png" id="2_px5wf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypglf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7m4kb"]
+bg_color = Color(0.705882, 0.545098, 0.054902, 0.537255)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf4jf"]
+bg_color = Color(0.705882, 0.545098, 0.054902, 0.537255)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="CanvasLayer" type="CanvasLayer"]
 metadata/_edit_vertical_guides_ = [1302.0]
@@ -10,6 +27,7 @@ metadata/_edit_vertical_guides_ = [1302.0]
 offset_top = 597.0
 offset_right = 1280.0
 offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ypglf")
 
 [node name="FlowContainer" type="FlowContainer" parent="Panel"]
 layout_mode = 0
@@ -21,9 +39,11 @@ theme_override_constants/h_separation = 10
 
 [node name="Panel" parent="Panel/FlowContainer" instance=ExtResource("1_fj45r")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7m4kb")
 
 [node name="Panel2" parent="Panel/FlowContainer" instance=ExtResource("1_fj45r")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wf4jf")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
