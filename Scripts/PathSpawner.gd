@@ -57,13 +57,13 @@ func _on_timer_timeout():
 	
 func _process(delta):
 	#wenn genug gegner gespawned sind und auf dem "Path" nur noch 2 Childs sind (Spawntimer und startbutton)
-	if mobCounter == 1 and self.get_child_count()==2:
+	if mobCounter == maxEnemies and self.get_child_count()==2:
 		mobCounter = 0		#gegner count zurücksetzen
 		timerStopped = true		#Der timer ist gestopped!
 		mobs.clear()
 		
 	#Sind genug gegner gespawned und der Timer läuft nicht mehr, spawntimer stop
-	if mobCounter == 1 and timerStopped==false:
+	if mobCounter == maxEnemies and timerStopped==false:
 		spawnTimer.stop()		
 	
 	#Sind gerade keine Gegner auf dem Path und der Timer ist stopped, kann die nächste wave gestartet werden.
