@@ -1,14 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjs3x8p3385u3"]
+[gd_scene load_steps=17 format=3 uid="uid://cjs3x8p3385u3"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_h0s2x"]
 [ext_resource type="Texture2D" uid="uid://bnohtrdfhjt2j" path="res://assets/Background/Background1 wolight.png" id="2_nqqrx"]
 [ext_resource type="Script" path="res://Scripts/PathSpawner.gd" id="3_5nqs7"]
-[ext_resource type="Texture2D" uid="uid://c0f2hrpi3b6rj" path="res://assets/Background/UI-Frame.png" id="3_ik2kt"]
 [ext_resource type="PackedScene" uid="uid://dc887fuuny1l2" path="res://Scenes/UI.tscn" id="3_kobho"]
 [ext_resource type="Texture2D" uid="uid://dhv45go034dc5" path="res://assets/Background/FilterV1.png" id="3_kx7di"]
 [ext_resource type="PackedScene" uid="uid://dtsyp63k4h5pt" path="res://assets/tile_map.tscn" id="4_cqrjg"]
 [ext_resource type="Texture2D" uid="uid://bwnprmw03txrd" path="res://assets/UIAssets/HerzV1.png" id="6_w0ceb"]
 [ext_resource type="Texture2D" uid="uid://dspyht7fyptj3" path="res://assets/UIAssets/ShellV1.png" id="7_luxf8"]
+[ext_resource type="Texture2D" uid="uid://c2s6osne7b7nu" path="res://assets/Background/UIFrame-top.png" id="8_b44y3"]
+[ext_resource type="Texture2D" uid="uid://d775whjq5dk4" path="res://assets/Background/UIFrame-bottom.png" id="9_piaf7"]
 [ext_resource type="AudioStream" uid="uid://cdp06wbcdi72w" path="res://assets/Sound/slimeDeathShort.wav" id="9_v1x3u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dee8"]
@@ -60,10 +61,10 @@ script = ExtResource("3_5nqs7")
 [node name="SpawnTimer" type="Timer" parent="PathSpawner"]
 
 [node name="StartWaveButton" type="Button" parent="PathSpawner"]
-offset_left = 932.0
-offset_top = -202.0
-offset_right = 1032.0
-offset_bottom = -102.0
+offset_left = 936.0
+offset_top = -198.0
+offset_right = 1036.0
+offset_bottom = -98.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_5dee8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ugmms")
 text = "Start Wave"
@@ -89,7 +90,13 @@ texture = ExtResource("3_kx7di")
 modulate = Color(1, 1, 1, 0.913725)
 position = Vector2(640.5, 359)
 scale = Vector2(1.33299, 1.34062)
-texture = ExtResource("3_ik2kt")
+texture = ExtResource("8_b44y3")
+
+[node name="UILayer2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.913725)
+position = Vector2(636.5, 409)
+scale = Vector2(1.32474, 1.15847)
+texture = ExtResource("9_piaf7")
 
 [node name="UI" type="Panel" parent="."]
 offset_left = 13.0
@@ -114,8 +121,8 @@ grow_vertical = 2
 value = 100.0
 
 [node name="Hearts" type="Sprite2D" parent="UI"]
-position = Vector2(101, 37)
-scale = Vector2(0.992188, 1.02924)
+position = Vector2(102, 36)
+scale = Vector2(1.30859, 1.35746)
 texture = ExtResource("6_w0ceb")
 
 [node name="Panel" type="Panel" parent="UI"]
@@ -134,11 +141,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Wave" type="Label" parent="UI/Panel"]
 layout_mode = 0
-offset_left = -3.0
-offset_top = 23.0
-offset_right = 97.0
-offset_bottom = 63.0
-theme_override_font_sizes/font_size = 29
+offset_left = -14.0
+offset_top = 25.0
+offset_right = 115.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 30
 text = "0 / 10"
 horizontal_alignment = 1
 
@@ -146,10 +153,10 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_left = 10.0
 offset_top = 65.0
-offset_right = 65.0
-offset_bottom = 97.0
-theme_override_font_sizes/font_size = 23
-text = "100"
+offset_right = 79.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 25
+text = "200"
 horizontal_alignment = 1
 
 [node name="MoneyIcon" type="Sprite2D" parent="UI"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl4igoduiku36"]
+
+[ext_resource type="Script" path="res://Scenes/BulletAnemoneTower.gd" id="1_82ydk"]
+[ext_resource type="Texture2D" uid="uid://ew0g53qd38s2" path="res://assets/Towers/anemoneTower1/SpikeV1.png" id="2_a6qd2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uq4te"]
+radius = 13.0384
+
+[node name="Bullet_anemone_tower" type="CharacterBody2D"]
+rotation = 1.50273
+script = ExtResource("1_82ydk")
+metadata/_edit_vertical_guides_ = [-13.0, 13.0]
+metadata/_edit_horizontal_guides_ = [-13.0, 13.0]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uq4te")
+
+[node name="Bullet" type="Sprite2D" parent="."]
+rotation = -5.05273
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_a6qd2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CircleShape2D_uq4te")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,8 +1,8 @@
 extends StaticBody2D
 
 # lade bullet scene
-var Bullet = preload("res://Scenes/Bullet_Coral_Tower.tscn")
-@export var bulletDamage = 3
+var Bullet = preload("res://Scenes/BulletAnemoneTower.tscn")
+@export var bulletDamage = 2
 var pathName
 var currTargets = [] 	# array mit allen currentTargets
 var curr 				# aktuelles Ziel

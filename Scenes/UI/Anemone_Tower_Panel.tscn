@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://begme12bpo76s"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Anemone_Tower_Panel.gd" id="1_1icla"]
+[ext_resource type="Texture2D" uid="uid://clldq7u8lqysx" path="res://assets/Towers/anemoneTower1/Coral3V2.png" id="2_5flg0"]
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+script = ExtResource("1_1icla")
+tower_cost = 250
+
+[node name="Koralle1_1" type="Sprite2D" parent="."]
+position = Vector2(48, 41)
+scale = Vector2(0.859375, 0.859375)
+texture = ExtResource("2_5flg0")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

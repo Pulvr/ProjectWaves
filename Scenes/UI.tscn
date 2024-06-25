@@ -2,18 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://b6gabb2wblfxi" path="res://Scenes/UI/Coral_Tower_Panel.tscn" id="1_fj45r"]
 [ext_resource type="Texture2D" uid="uid://dspyht7fyptj3" path="res://assets/UIAssets/ShellV1.png" id="2_bbewj"]
+[ext_resource type="PackedScene" uid="uid://begme12bpo76s" path="res://Scenes/UI/Anemone_Tower_Panel.tscn" id="2_r0p6n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypglf"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7m4kb"]
-bg_color = Color(0.705882, 0.545098, 0.054902, 0.537255)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf4jf"]
 bg_color = Color(0.705882, 0.545098, 0.054902, 0.537255)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -41,9 +35,9 @@ theme_override_constants/h_separation = 10
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7m4kb")
 
-[node name="Panel2" parent="Panel/FlowContainer" instance=ExtResource("1_fj45r")]
+[node name="Panel2" parent="Panel/FlowContainer" instance=ExtResource("2_r0p6n")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wf4jf")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7m4kb")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
@@ -60,13 +54,13 @@ texture = ExtResource("2_bbewj")
 
 [node name="Label2" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 150.0
-offset_top = 89.0
-offset_right = 190.0
-offset_bottom = 112.0
-text = "100"
+offset_left = 152.0
+offset_top = 88.0
+offset_right = 192.0
+offset_bottom = 111.0
+text = "250"
 
 [node name="Coin2" type="Sprite2D" parent="Panel/Label2"]
-position = Vector2(43, 8.99999)
+position = Vector2(44, 10)
 scale = Vector2(0.347656, 0.347656)
 texture = ExtResource("2_bbewj")
