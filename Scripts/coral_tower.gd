@@ -34,7 +34,6 @@ func _on_tower_body_entered(body):
 
 func _on_tower_body_exited(body):
 	update_targets_array(body)
-	
 
 #wird ausgeführt wenn ein body die area entered und exited
 func update_targets_array(body):
@@ -47,7 +46,6 @@ func update_targets_array(body):
 			if "Mob" in i.name:
 				tempArray.append(i)
 		currTargets = tempArray
-
 
 func update_current_target():
 	var currTarget = null

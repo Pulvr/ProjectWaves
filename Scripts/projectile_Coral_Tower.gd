@@ -13,9 +13,6 @@ func _physics_process(delta):
 	
 	if (target!=null):
 		velocity = global_position.direction_to(target) * speed
-	
-		#look_at(target)
-	
 		move_and_slide()
 
 func _on_area_2d_body_entered(body):

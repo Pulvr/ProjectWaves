@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfhwsf15gf8ao"]
+
+[ext_resource type="AudioStream" uid="uid://coojw2sf5hm0p" path="res://assets/Sound/cuteBGM.mp3" id="1_pdloh"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_pdloh")
+volume_db = -18.0
+autoplay = true

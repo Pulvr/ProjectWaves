@@ -18,6 +18,25 @@ var maxEnemies				#maximale Gegner die pro welle gespawned werden sollen
 var timerStopped = true
 var waveCounter = 0
 
+func _process(delta):
+	#wenn genug gegner gespawned sind und auf dem "Path" nur noch 2 Childs sind (Spawntimer und startbutton)
+	if mobCounter == maxEnemies and self.get_child_count()==2:
+		mobCounter = 0		#gegner count zurücksetzen
+		timerStopped = true		#Der timer ist gestopped!
+		mobs.clear()
+		
+	#Sind genug gegner gespawned und der Timer läuft nicht mehr, spawntimer stop
+	if mobCounter == maxEnemies and timerStopped==false:
+		spawnTimer.stop()		
+	
+	#Sind gerade keine Gegner auf dem Path und der Timer ist stopped, kann die nächste wave gestartet werden.
+	if mobCounter == 0 and timerStopped == true:
+		startButton.show()
+	
+	# wenn welle 10 erreicht und alle gegner besiegt gewonnen, bisher noch broken, man gewinnt sofort auf welle 10
+	if mobCounter == 0 and self.get_child_count()==2 and waveCounter==10 and timerStopped == true:
+		gameWon.emit()
+		
 #Wenn der verknüpfter Timer abläuft, wird der tempPath "instanced"
 #Und dann als child zum Scene_tree hinzugefügt
 func _on_timer_timeout():
@@ -54,25 +73,6 @@ func _on_timer_timeout():
 	elif waveCounter == 10:
 		mobScene.set_speed(400)
 		mobScene.set_health(60)
-	
-func _process(delta):
-	#wenn genug gegner gespawned sind und auf dem "Path" nur noch 2 Childs sind (Spawntimer und startbutton)
-	if mobCounter == maxEnemies and self.get_child_count()==2:
-		mobCounter = 0		#gegner count zurücksetzen
-		timerStopped = true		#Der timer ist gestopped!
-		mobs.clear()
-		
-	#Sind genug gegner gespawned und der Timer läuft nicht mehr, spawntimer stop
-	if mobCounter == maxEnemies and timerStopped==false:
-		spawnTimer.stop()		
-	
-	#Sind gerade keine Gegner auf dem Path und der Timer ist stopped, kann die nächste wave gestartet werden.
-	if mobCounter == 0 and timerStopped == true:
-		startButton.show()
-	
-	# wenn welle 10 erreicht und alle gegner besiegt gewonnen, bisher noch broken, man gewinnt sofort auf welle 10
-	if mobCounter == 0 and self.get_child_count()==2 and waveCounter==10 and timerStopped == true:
-		gameWon.emit()
 		
 func _on_start_wave_button_pressed():
 	spawnTimer.start()		#Gegner Spawn starten
