@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjs3x8p3385u3"]
+[gd_scene load_steps=16 format=3 uid="uid://cjs3x8p3385u3"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_h0s2x"]
-[ext_resource type="Texture2D" uid="uid://croipvk7fxaxp" path="res://assets/Background/ProjectWave_Background_Lvl_1_v5.png" id="1_rkcys"]
+[ext_resource type="Texture2D" uid="uid://bnohtrdfhjt2j" path="res://assets/Background/Background1 wolight.png" id="2_nqqrx"]
 [ext_resource type="Script" path="res://Scripts/PathSpawner.gd" id="3_5nqs7"]
 [ext_resource type="Texture2D" uid="uid://c0f2hrpi3b6rj" path="res://assets/Background/UI-Frame.png" id="3_ik2kt"]
 [ext_resource type="PackedScene" uid="uid://dc887fuuny1l2" path="res://Scenes/UI.tscn" id="3_kobho"]
+[ext_resource type="Texture2D" uid="uid://dhv45go034dc5" path="res://assets/Background/FilterV1.png" id="3_kx7di"]
 [ext_resource type="PackedScene" uid="uid://dtsyp63k4h5pt" path="res://assets/tile_map.tscn" id="4_cqrjg"]
-[ext_resource type="Texture2D" uid="uid://cal0xeqintc30" path="res://assets/UIAssets/Heart.png" id="5_ome6y"]
-[ext_resource type="Texture2D" uid="uid://dn1oxkvidgfr7" path="res://assets/UIAssets/coin.png" id="6_k7mn1"]
+[ext_resource type="Texture2D" uid="uid://bwnprmw03txrd" path="res://assets/UIAssets/HerzV1.png" id="6_w0ceb"]
+[ext_resource type="Texture2D" uid="uid://dspyht7fyptj3" path="res://assets/UIAssets/ShellV1.png" id="7_luxf8"]
 [ext_resource type="AudioStream" uid="uid://cdp06wbcdi72w" path="res://assets/Sound/slimeDeathShort.wav" id="9_v1x3u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dee8"]
@@ -50,12 +51,7 @@ script = ExtResource("1_h0s2x")
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(641, 360)
 scale = Vector2(0.336458, 0.338889)
-texture = ExtResource("1_rkcys")
-
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
-position = Vector2(-1.48598, -2.95095)
-scale = Vector2(3.96183, 3.95592)
-texture = ExtResource("3_ik2kt")
+texture = ExtResource("2_nqqrx")
 
 [node name="PathSpawner" type="Node2D" parent="."]
 position = Vector2(75, 206)
@@ -64,10 +60,10 @@ script = ExtResource("3_5nqs7")
 [node name="SpawnTimer" type="Timer" parent="PathSpawner"]
 
 [node name="StartWaveButton" type="Button" parent="PathSpawner"]
-offset_left = 1088.0
-offset_top = -55.0
-offset_right = 1188.0
-offset_bottom = 45.0
+offset_left = 932.0
+offset_top = -202.0
+offset_right = 1032.0
+offset_bottom = -102.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_5dee8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ugmms")
 text = "Start Wave"
@@ -75,6 +71,25 @@ text = "Start Wave"
 [node name="Towers" type="Node2D" parent="."]
 
 [node name="Bottom UI" parent="." instance=ExtResource("3_kobho")]
+
+[node name="TileMap" parent="." instance=ExtResource("4_cqrjg")]
+layer_0/tile_data = PackedInt32Array(0, 196608, 3, 1, 196608, 3, 2, 196608, 3, 3, 196608, 3, 4, 196608, 3, 65536, 196608, 3, 131072, 196608, 3, 131073, 196608, 3, 196609, 196608, 3, 196610, 196608, 3, 196611, 196608, 3, 196612, 196608, 3, 196613, 196608, 3, 196614, 196608, 3, 196615, 196608, 3, 196616, 196608, 3, 262152, 196608, 3, 327688, 196608, 3, 393224, 196608, 3, 458758, 196608, 3, 524294, 196608, 3, 524299, 196608, 3, 458763, 196608, 3, 393227, 196608, 3, 327691, 196608, 3, 262155, 196608, 3, 196619, 196608, 3, 196620, 196608, 3, 196621, 196608, 3, 196622, 196608, 3, 196623, 196608, 3, 196624, 196608, 3, 196625, 196608, 3, 262161, 196608, 3, 327697, 196608, 3, 393233, 196608, 3, 393232, 196608, 3, 393231, 196608, 3, 393230, 196608, 3, 393229, 196608, 3, 458765, 196608, 3, 524301, 196608, 3, 196608, 196608, 3, 589830, 196608, 3, 589835, 196608, 3, 589837, 196608, 3, 589838, 196608, 3, 589839, 196608, 3, 589840, 196608, 3, 589841, 196608, 3, 589842, 196608, 3, 589843, 196608, 3, 655373, 196608, 3, 655374, 196608, 3, 655375, 196608, 3, 655376, 196608, 3, 655377, 196608, 3, 655378, 196608, 3, 655379, 196608, 3, 655366, 196608, 3, 655367, 196608, 3, 655368, 196608, 3, 655369, 196608, 3, 655370, 196608, 3, 655371, 196608, 3, 262156, 196608, 3, 262157, 196608, 3, 262158, 196608, 3, 262159, 196608, 3, 262160, 196608, 3, 458759, 196608, 3, 458760, 196608, 3, 262144, 196608, 3, 262145, 196608, 3, 262146, 196608, 3, 262147, 196608, 3, 262148, 196608, 3, 262149, 196608, 3, 262150, 196608, 3, 262151, 196608, 3, 458766, 196608, 3, 458767, 196608, 3, 458768, 196608, 3, 458769, 196608, 3, 655380, 196608, 3, 589844, 196608, 3, 393221, 196608, 3, 458757, 196608, 3, 524293, 196608, 3, 589829, 196608, 3, 655365, 196608, 3, 589831, 196608, 3, 589832, 196608, 3, 589833, 196608, 3, 589834, 196608, 3, 393222, 196608, 3, 393223, 196608, 3)
+
+[node name="enemyDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_v1x3u")
+volume_db = -6.608
+
+[node name="FilterV1" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.756863)
+position = Vector2(656, 379)
+scale = Vector2(0.693519, 0.693519)
+texture = ExtResource("3_kx7di")
+
+[node name="UILayer" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.913725)
+position = Vector2(640.5, 359)
+scale = Vector2(1.33299, 1.34062)
+texture = ExtResource("3_ik2kt")
 
 [node name="UI" type="Panel" parent="."]
 offset_left = 13.0
@@ -99,9 +114,9 @@ grow_vertical = 2
 value = 100.0
 
 [node name="Hearts" type="Sprite2D" parent="UI"]
-position = Vector2(94, 39)
-scale = Vector2(0.671875, 0.696966)
-texture = ExtResource("5_ome6y")
+position = Vector2(101, 37)
+scale = Vector2(0.992188, 1.02924)
+texture = ExtResource("6_w0ceb")
 
 [node name="Panel" type="Panel" parent="UI"]
 layout_mode = 1
@@ -119,8 +134,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Wave" type="Label" parent="UI/Panel"]
 layout_mode = 0
-offset_right = 100.0
-offset_bottom = 40.0
+offset_left = -3.0
+offset_top = 23.0
+offset_right = 97.0
+offset_bottom = 63.0
 theme_override_font_sizes/font_size = 29
 text = "0 / 10"
 horizontal_alignment = 1
@@ -136,12 +153,9 @@ text = "100"
 horizontal_alignment = 1
 
 [node name="MoneyIcon" type="Sprite2D" parent="UI"]
-position = Vector2(93, 86)
-scale = Vector2(0.780688, 0.526712)
-texture = ExtResource("6_k7mn1")
-
-[node name="TileMap" parent="." instance=ExtResource("4_cqrjg")]
-layer_0/tile_data = PackedInt32Array(0, 196608, 3, 1, 196608, 3, 2, 196608, 3, 3, 196608, 3, 4, 196608, 3, 65536, 196608, 3, 131072, 196608, 3, 131073, 196608, 3, 196609, 196608, 3, 196610, 196608, 3, 196611, 196608, 3, 196612, 196608, 3, 196613, 196608, 3, 196614, 196608, 3, 196615, 196608, 3, 196616, 196608, 3, 262152, 196608, 3, 327688, 196608, 3, 393224, 196608, 3, 458758, 196608, 3, 524294, 196608, 3, 524299, 196608, 3, 458763, 196608, 3, 393227, 196608, 3, 327691, 196608, 3, 262155, 196608, 3, 196619, 196608, 3, 196620, 196608, 3, 196621, 196608, 3, 196622, 196608, 3, 196623, 196608, 3, 196624, 196608, 3, 196625, 196608, 3, 262161, 196608, 3, 327697, 196608, 3, 393233, 196608, 3, 393232, 196608, 3, 393231, 196608, 3, 393230, 196608, 3, 393229, 196608, 3, 458765, 196608, 3, 524301, 196608, 3, 196608, 196608, 3, 589830, 196608, 3, 589835, 196608, 3, 589837, 196608, 3, 589838, 196608, 3, 589839, 196608, 3, 589840, 196608, 3, 589841, 196608, 3, 589842, 196608, 3, 589843, 196608, 3, 655373, 196608, 3, 655374, 196608, 3, 655375, 196608, 3, 655376, 196608, 3, 655377, 196608, 3, 655378, 196608, 3, 655379, 196608, 3, 655366, 196608, 3, 655367, 196608, 3, 655368, 196608, 3, 655369, 196608, 3, 655370, 196608, 3, 655371, 196608, 3, 262156, 196608, 3, 262157, 196608, 3, 262158, 196608, 3, 262159, 196608, 3, 262160, 196608, 3, 458759, 196608, 3, 458760, 196608, 3, 262144, 196608, 3, 262145, 196608, 3, 262146, 196608, 3, 262147, 196608, 3, 262148, 196608, 3, 262149, 196608, 3, 262150, 196608, 3, 262151, 196608, 3, 458766, 196608, 3, 458767, 196608, 3, 458768, 196608, 3, 458769, 196608, 3, 655380, 196608, 3, 589844, 196608, 3, 393221, 196608, 3, 458757, 196608, 3, 524293, 196608, 3, 589829, 196608, 3, 655365, 196608, 3, 589831, 196608, 3, 589832, 196608, 3, 589833, 196608, 3, 589834, 196608, 3, 393222, 196608, 3, 393223, 196608, 3)
+position = Vector2(101, 82)
+scale = Vector2(0.611222, 0.659343)
+texture = ExtResource("7_luxf8")
 
 [node name="ErrorLabel" type="Label" parent="."]
 offset_left = 8.0
@@ -151,10 +165,6 @@ offset_bottom = 588.0
 theme_override_colors/font_color = Color(0.782191, 0, 0.251634, 1)
 theme_override_fonts/font = SubResource("SystemFont_s8ahx")
 theme_override_font_sizes/font_size = 30
-
-[node name="enemyDeath" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_v1x3u")
-volume_db = -6.608
 
 [connection signal="gameOver" from="." to="." method="_on_game_over"]
 [connection signal="gameWon" from="PathSpawner" to="." method="_on_path_spawner_game_won"]

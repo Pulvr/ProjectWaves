@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dog6lc16rmp4c"]
 
 [ext_resource type="Script" path="res://Scripts/coral_tower.gd" id="1_oea5t"]
-[ext_resource type="Texture2D" uid="uid://cwnvgiun4t74a" path="res://assets/Towers/coralTower1/Koralle 1.1.png" id="2_qtg6h"]
+[ext_resource type="Texture2D" uid="uid://cnaxoaqv5r5pt" path="res://assets/Towers/coralTower1/Coral2V1.png" id="2_bneqm"]
 [ext_resource type="AudioStream" uid="uid://ckrlrl676j5bq" path="res://assets/Sound/bubble.wav" id="3_t6x86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ltsu"]
@@ -29,9 +29,9 @@ shape = SubResource("RectangleShape2D_0ltsu")
 [node name="Aim" type="Marker2D" parent="."]
 
 [node name="Koralle1_1" type="Sprite2D" parent="."]
-position = Vector2(2, -25)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_qtg6h")
+position = Vector2(0, -15)
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("2_bneqm")
 
 [node name="Tower" type="Area2D" parent="."]
 
@@ -41,10 +41,10 @@ shape = SubResource("CircleShape2D_q1gtl")
 [node name="BulletContainer" type="Node" parent="."]
 
 [node name="Area" type="Panel" parent="."]
-offset_left = -216.0
-offset_top = -216.0
-offset_right = 216.0
-offset_bottom = 216.0
+offset_left = -215.0
+offset_top = -215.0
+offset_right = 217.0
+offset_bottom = 217.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mfufo")
 
 [node name="CooldownTimer" type="Timer" parent="."]

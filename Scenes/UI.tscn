@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dc887fuuny1l2"]
 
 [ext_resource type="PackedScene" uid="uid://b6gabb2wblfxi" path="res://Scenes/UI/Coral_Tower_Panel.tscn" id="1_fj45r"]
-[ext_resource type="Texture2D" uid="uid://dn1oxkvidgfr7" path="res://assets/UIAssets/coin.png" id="2_px5wf"]
+[ext_resource type="Texture2D" uid="uid://dspyht7fyptj3" path="res://assets/UIAssets/ShellV1.png" id="2_bbewj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypglf"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -54,9 +54,9 @@ offset_bottom = 112.0
 text = "100"
 
 [node name="Coin" type="Sprite2D" parent="Panel/Label"]
-position = Vector2(34, 13)
-scale = Vector2(0.226562, 0.226562)
-texture = ExtResource("2_px5wf")
+position = Vector2(43, 8.99999)
+scale = Vector2(0.363281, 0.363281)
+texture = ExtResource("2_bbewj")
 
 [node name="Label2" type="Label" parent="Panel"]
 layout_mode = 0
@@ -67,6 +67,6 @@ offset_bottom = 112.0
 text = "100"
 
 [node name="Coin2" type="Sprite2D" parent="Panel/Label2"]
-position = Vector2(34, 13)
-scale = Vector2(0.226562, 0.226562)
-texture = ExtResource("2_px5wf")
+position = Vector2(43, 8.99999)
+scale = Vector2(0.347656, 0.347656)
+texture = ExtResource("2_bbewj")

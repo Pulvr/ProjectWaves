@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cggkm0bv5aygw"]
 
 [ext_resource type="Script" path="res://Scripts/projectile_Coral_Tower.gd" id="1_3m4ht"]
-[ext_resource type="Texture2D" uid="uid://5a0i0h2j81i3" path="res://assets/Towers/coralTower1/bullet.png" id="2_sigqu"]
+[ext_resource type="Texture2D" uid="uid://cfslhy8dpeysk" path="res://assets/Towers/coralTower1/PoisonV3.png" id="2_4ktnh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uq4te"]
 radius = 13.0384
@@ -11,12 +11,12 @@ script = ExtResource("1_3m4ht")
 metadata/_edit_vertical_guides_ = [-13.0, 13.0]
 metadata/_edit_horizontal_guides_ = [-13.0, 13.0]
 
-[node name="Bullet" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_sigqu")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uq4te")
+
+[node name="Bullet" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_4ktnh")
 
 [node name="Area2D" type="Area2D" parent="."]
 
