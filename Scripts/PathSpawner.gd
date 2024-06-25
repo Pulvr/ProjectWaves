@@ -62,17 +62,17 @@ func _on_timer_timeout():
 		mobScene.set_speed(250)
 		mobScene.set_health(30)
 	elif waveCounter == 7:
-		mobScene.set_speed(270)
+		mobScene.set_speed(300)
 		mobScene.set_health(35)
 	elif waveCounter == 8:
-		mobScene.set_speed(300)
+		mobScene.set_speed(320)
 		mobScene.set_health(40)
 	elif waveCounter == 9:
-		mobScene.set_speed(350)
-		mobScene.set_health(50)
+		mobScene.set_speed(360)
+		mobScene.set_health(45)
 	elif waveCounter == 10:
 		mobScene.set_speed(400)
-		mobScene.set_health(60)
+		mobScene.set_health(50)
 		
 func _on_start_wave_button_pressed():
 	spawnTimer.start()		#Gegner Spawn starten

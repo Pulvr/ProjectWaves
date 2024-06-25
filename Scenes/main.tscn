@@ -82,8 +82,8 @@ volume_db = -6.608
 
 [node name="FilterV1" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.756863)
-position = Vector2(656, 379)
-scale = Vector2(0.693519, 0.693519)
+position = Vector2(639, 359)
+scale = Vector2(0.688426, 0.700463)
 texture = ExtResource("3_kx7di")
 
 [node name="UILayer" type="Sprite2D" parent="."]
