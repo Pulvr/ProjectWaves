@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dog6lc16rmp4c"]
+[gd_scene load_steps=7 format=3 uid="uid://dog6lc16rmp4c"]
 
 [ext_resource type="Script" path="res://Scripts/coral_tower.gd" id="1_oea5t"]
 [ext_resource type="Texture2D" uid="uid://cwnvgiun4t74a" path="res://assets/Towers/coralTower1/Koralle 1.1.png" id="2_qtg6h"]
+[ext_resource type="AudioStream" uid="uid://ckrlrl676j5bq" path="res://assets/Sound/bubble.wav" id="3_t6x86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ltsu"]
 size = Vector2(59, 55)
@@ -48,6 +49,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_mfufo")
 
 [node name="CooldownTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="shootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_t6x86")
+volume_db = -12.589
+pitch_scale = 1.34
 
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]

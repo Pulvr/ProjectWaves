@@ -8,6 +8,8 @@ var currTargets = [] 	# array mit allen currentTargets
 var curr 				# aktuelles Ziel
 var justShot = true
 
+@onready var bubble = $shootSound
+
 func _physics_process(delta):
 	#Kugeln die nicht mehr gebraucht werden löschen, wenn bspw. gegner 
 	#von anderem Turm erledigt wird. 
@@ -22,6 +24,8 @@ func _physics_process(delta):
 	# Wenn ziel existiert, bullet erstellen
 	if is_instance_valid(curr) and justShot == false:
 		var tempBullet  = Bullet.instantiate()
+		bubble.pitch_scale = randf_range(0.8,1.3)
+		bubble.play()
 		tempBullet.pathName = pathName
 		tempBullet.bulletDamage = bulletDamage
 		get_node("BulletContainer").call_deferred("add_child", tempBullet)

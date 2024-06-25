@@ -9,6 +9,7 @@ var current_money = 200
 
 @onready var hp_bar = $UI/HpBar
 @onready var money = $UI/Money
+@onready var deathSound = $enemyDeath
 
 func _ready():
 	update_hp_bar()
@@ -22,6 +23,8 @@ func take_damage(damage):
 	
 func earn_money(amount):
 	current_money += amount
+	deathSound.pitch_scale = randf_range(0.9,1.1)
+	deathSound.play()
 	if current_money > 9999:
 		current_money = 9999
 	update_money()

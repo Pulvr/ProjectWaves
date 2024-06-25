@@ -14,7 +14,7 @@ func _process(delta):
 	get_parent().set_progress(get_parent().get_progress() + speed*delta)
 	if get_parent().get_progress_ratio() == 1:
 		mainScene.take_damage(5)				#take 5 damage
-		get_parent().get_parent().queue_free() 	#delete entire node
+		get_parent().get_parent().queue_free()	#delete entire node
 	if health <= 0:
 		mainScene.earn_money(10)				#add 10 money
 		get_parent().get_parent().queue_free()	#delete entire node
